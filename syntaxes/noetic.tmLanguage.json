@@ -1,0 +1,66 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Noetic",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+    {
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "^( )*/(if|else|end|question|answer|label|goto|chat|wait|music|sound|ambiance)"
+      },{
+				"name": "keyword.operator.new",
+				"match": "^( )*/(set|mul|add|sub|div|random)"
+			},{
+				"name": "keyword.control",
+				"match": "^( )*/(control)"
+			},{
+				"name": "keyword.control",
+				"match": "(==|<=|<|>|>=|!=)"
+			},{
+				"name": "string",
+        "begin": "^( )*@",
+        "end": ":"
+			}
+    ]
+		},
+    "comments": {
+      "name": "comment.line.noetic",
+			"begin": "//",
+			"end": "\n"
+    },
+    "constants": {
+      "name": "constant.numeric",
+      "match": "(0|1|2|3|4|5|6|7|8|9)"
+    },
+    "variables": {
+      "patterns": [{
+        "name": "variable.global.noetic",
+        "begin": "\\$",
+			  "end": "( |\n)"
+      },{
+        "name": "variable.actor.noetic",
+        "begin": "@",
+			  "end": "( |\n)"
+			},{
+        "name": "variable.place.noetic",
+        "begin": "#",
+			  "end": "( |\n)"
+			}
+    ]
+    }
+	},
+	"scopeName": "source.noe"
+}

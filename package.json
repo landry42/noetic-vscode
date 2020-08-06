@@ -1,0 +1,30 @@
+{
+    "name": "noetic",
+    "displayName": "Noetic",
+    "description": "Support Noetic language syntax",
+    "version": "0.0.1",
+    "icon": "icon.png",
+    "publisher": "Blockup",
+    "author": {
+      "name": "landry"
+    },
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "noetic",
+            "aliases": ["Noetic", "noetic"],
+            "extensions": [".noe",".noetic"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "noetic",
+            "scopeName": "source.noe",
+            "path": "./syntaxes/noetic.tmLanguage.json"
+        }]
+    }
+}
